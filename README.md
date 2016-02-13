@@ -8,6 +8,10 @@ provided by the [RailsApps Project](http://railsapps.github.io/).
 
 Rails Composer is supported by developers who purchase our RailsApps tutorials.
 
+To Run the APP
+-----------
+`rails server`
+
 Problems? Issues?
 -----------
 
