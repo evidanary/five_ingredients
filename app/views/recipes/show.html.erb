@@ -10,6 +10,21 @@
   <%= @recipe.image_location %>
 </p>
 
+<h3>Ingredients</h3>
+<div id="recipe-ingredients">
+  <% @ingredients.each do |ingredient| %>
+    <%= ingredient.name %>
+    <br>
+  <% end %>
+</div>
+
+<h3>Steps</h3>
+<div id="recipe-ingredients">
+  <% @steps.each do |step| %>
+    <%= step.content %>
+    <br>
+  <% end %>
+</div>
 <p>
   <strong>Submitted by:</strong>
   <%= @recipe.submitted_by %>

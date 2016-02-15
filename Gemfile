@@ -18,6 +18,7 @@ gem 'devise'
 gem 'high_voltage'
 gem 'pg'
 gem 'puma'
+gem 'cocoon'
 group :development do
   gem 'better_errors'
   gem 'foreman'
