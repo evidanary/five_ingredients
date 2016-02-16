@@ -81,6 +81,13 @@
               <p><%= "Prep Time: #{recipe.prep_time} mins" %></p>
               <p><%= "Cook Time: #{recipe.cook_time} mins" %></p>
               <p><%= "Steps: #{step_count}" %></p>
+              <form role="form" class="form-horizontal">
+                <div class="form-group">
+                  <div class="col-sm-offset-1 col-sm-10">
+                    <input type="submit" value="View Recipe" />
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
       <% end %>
