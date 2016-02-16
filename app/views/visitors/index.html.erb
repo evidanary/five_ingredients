@@ -69,19 +69,21 @@
 <div class="content-section-a">
 
     <div class="container">
-        <div class="row">
+      <% @recipes.each do |recipe| %>
+          <% step_count = recipe.steps.count %>
+          <div class="row">
             <div class="col-lg-3 col-lg-offset-2 col-sm-3">
-              <%= image_tag 'recipes/recipe_id_1.jpg' %>
+              <%= image_tag "#{recipe.image_location}" %>
             </div>
-          <div class="col-lg-3">
-            <h3>Chicken Kale Salad</h3>
-            <p>Total Time: 30 mins</p>
-            <p>Prep Time: 10 mins</p>
-            <p>Cook Time: 20 mins</p>
-            <p>Steps: 5</p>
-
-        </div>
-
+            <div class="col-lg-3">
+              <h3><%= "#{recipe.name}" %></h3>
+              <p><%= "Total Time: #{recipe.total_time}" %></p>
+              <p><%= "Prep Time: #{recipe.prep_time}" %></p>
+              <p><%= "Cook Time: #{recipe.prep_time}" %></p>
+              <p><%= "Steps: #{step_count}" %></p>
+            </div>
+          </div>
+      <% end %>
     </div>
     <!-- /.container -->
 
