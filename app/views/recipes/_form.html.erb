@@ -1,0 +1,73 @@
+<%= form_for(@recipe) do |f| %>
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+      <% @recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :image_location %><br>
+    <%= f.text_field :image_location %>
+  </div>
+  <h3>Ingredients</h3>
+  <div id="recipe-ingredients">
+    <%= f.fields_for :ingredients do |ingredient| %>
+      <%= render 'ingredient_fields', f: ingredient %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add ingredient', f, :ingredients %>
+    </div>
+  </div>
+
+  <h3>Steps</h3>
+  <div id="recipe-steps">
+    <%= f.fields_for :steps do |step| %>
+      <%= render 'step_fields', f: step %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add step', f, :steps %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :submitted_by %><br>
+    <%= f.text_field :submitted_by %>
+  </div>
+  <div class="field">
+    <%= f.label :total_time %><br>
+    <%= f.number_field :total_time %>
+  </div>
+  <div class="field">
+    <%= f.label :cook_time %><br>
+    <%= f.number_field :cook_time %>
+  </div>
+  <div class="field">
+    <%= f.label :prep_time %><br>
+    <%= f.number_field :prep_time %>
+  </div>
+  <div class="field">
+    <%= f.label :created_at %><br>
+    <%= f.datetime_select :created_at %>
+  </div>
+  <div class="field">
+    <%= f.label :updated_at %><br>
+    <%= f.datetime_select :updated_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

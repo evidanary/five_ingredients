@@ -23,6 +23,10 @@ To Run the APP
 -----------
 `rails server`
 
+To Deploy
+------------
+Push the "deploy" branch to github
+
 Problems? Issues?
 -----------
 
